@@ -1,16 +1,21 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App" style={{ paddingTop: '10px' }}>
-      <input type='text' />
-      <button>
-        Click me!
-      </button>
-      <h1>teste</h1>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const { newValue } = this.props;
+    return (
+      <div className="App" style={{ paddingTop: '10px' }}>
+        <input type='text' />
+        <button>
+          Click me!
+        </button>
+        <h1>{newValue}</h1>
+      </div>
+    );
+  }
 }
-
-export default App;
+const mapStateToProps = store => ({
+  newValue: store.clickState.newValue
+});
+export default connect(mapStateToProps)(App);
