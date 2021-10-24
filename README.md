@@ -13,4 +13,12 @@ Store: é o container que armazena e centraliza o estado geral da aplicação. E
 
 - Podemos ter apenas uma Store por aplicação, ou seja, ela é a Única Fonte de Verdade (Single Source of Truth).
 
+Actions: são fontes de informações que são enviadas da aplicação para a Store. São disparadas pelas Action Creators, que são simples funções que, ao serem executadas, ativam os Reducers.
+
+Reducers: recebem e tratam as informações para que sejam ou não enviadas à Store.
+
+Conexão dos componentes ao Redux: para poderem se inscrever à evolução de estados da Store ou disparar eventos para evoluí-la
+
+Pode não ter ficado muito claro agora, mas não precisa se preocupar, pois com a aplicação será mais fácil de entender. Caso queira informações mais detalhadas, recomendo a leitura da documentação oficial: https://redux.js.org/
+
 
