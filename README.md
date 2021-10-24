@@ -8,3 +8,9 @@ Arquitetura do Redux > O Redux é uma implementação criada pelo Dan Abramov da
 Através da ilustração percebemos que o Redux simplesmente simplifica a evolução de estados de uma aplicação quando há múltiplos estados para controlar e muitos componentes que precisam atualizar ou se inscrever nessa evolução, tirando a responsabilidade de cada componente de guardar o estado e passando para uma centralizada e única Store.
 
 - Para realizar tal fluxo, o Redux depende de 4 partes:
+
+Store: é o container que armazena e centraliza o estado geral da aplicação. Ela é imutável, ou seja, nunca se altera, apenas evolui.
+
+- Podemos ter apenas uma Store por aplicação, ou seja, ela é a Única Fonte de Verdade (Single Source of Truth).
+
+
