@@ -1,6 +1,6 @@
-import { CLICK_UPDATE_VALUE } from './actionTypes';
-export const clickButton = value => ({
-    type: CLICK_UPDATE_VALUE,
-    newValue: value,
+import { clickReducer } from './clickReducer';
+import { combineReducers } from 'redux';
+
+export const Reducers = combineReducers({
     clickState: clickReducer
 });

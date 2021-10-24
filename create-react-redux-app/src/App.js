@@ -1,13 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { clickButton } from './actions';
 import './App.css';
+
 class App extends Component {
+  state = {
+    inputValue: ''
+  }
+
+  inputChange = event => {
+    this.setState({
+      inputValue: event.target.value
+    })
+  }
+
   render() {
-    const { newValue } = this.props;
+    const {
+      clickButton,
+      newValue
+    } = this.props;
+
     return (
       <div className="App" style={{ paddingTop: '10px' }}>
-        <input type='text' />
-        <button>
+        <input
+          onChange={this.inputChange}
+          type='text'
+          value={this.state.inputValue}
+        />
+        <button onClick={() => clickButton(this.state.inputValue)}>
           Click me!
         </button>
         <h1>{newValue}</h1>
@@ -15,7 +36,13 @@ class App extends Component {
     );
   }
 }
+
 const mapStateToProps = store => ({
   newValue: store.clickState.newValue
 });
-export default connect(mapStateToProps)(App);
+
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ clickButton }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
